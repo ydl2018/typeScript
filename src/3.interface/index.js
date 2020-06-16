@@ -10,3 +10,11 @@ let p1 = { x: 10, y: 10 };
 // note3: ReadonlyArray<T>
 let arr = [1, 2];
 let ro = arr;
+// 报错
+// let arr2:Array<number> = ro;
+// 这样可以进行强制转换
+arr = ro;
+function createSquare(config) {
+    return { colour: '1', area: 10 };
+}
+createSquare({ colour: 1 });
