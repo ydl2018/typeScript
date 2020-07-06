@@ -15,6 +15,17 @@ let ro = arr;
 // 这样可以进行强制转换
 arr = ro;
 function createSquare(config) {
-    return { colour: '1', area: 10 };
+    return { color: '1', area: 10 };
 }
-createSquare({ colour: 1 });
+const obj = { colour: 'red', color: 'red', width: 10 };
+// note5 如果通过对象字面量来传参，则传参不能包括其他的属性
+// let square = createSquare({colour:'red',color:'red', width:10});
+// 如果想要绕开检测，有两种方法
+// 1. 通过变量传递
+createSquare(obj);
+// 2. as
+createSquare({ colour: 'red' });
+let mySearch;
+mySearch = function (source, subString) {
+    return false;
+};
