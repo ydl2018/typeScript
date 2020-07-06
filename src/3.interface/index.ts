@@ -138,3 +138,67 @@ interface ClockConstructor{
     new (hour:number,minute:number);
 }
 
+// 自动将name赋值到 this里
+class Octopus {
+   constructor(readonly name) {
+
+   }
+}
+
+class Employee {
+    constructor() {
+        this._fullName = '3'
+    }
+    private _fullName: string;
+    get fullName() : string{
+        return this._fullName
+    }
+    set fullName(newName:string){
+        this._fullName = newName;
+    }
+}
+
+// 静态属性
+
+class Grid{
+    static origin = {x:0 ,y :0}
+    calculateDistanceFromOrigin(point: {x:number,y:number}){
+        console.log(Grid.origin.x)
+    }
+}
+
+//抽象类
+/**
+ * 抽象类做为其它派生类的基类使用。 它们一般不会直接被实例化。
+ * 不同于接口，抽象类可以包含成员的实现细节。
+ * abstract关键字是用于定义抽象类和在抽象类内部定义抽象方法。
+ */
+abstract class Department {
+    // constructor 也要是protected类型
+    protected constructor(public name) {
+
+    }
+    printName():void{
+        console.log('Department name:' + this.name)
+    }
+    abstract printMeeting():void;
+}
+
+class AccountingDepartment extends Department {
+    constructor(public name) {
+        super(name);
+    }
+    printMeeting(): void {
+
+    }
+}
+
+class Greeter {
+    greeting: string;
+    constructor() {
+
+    }
+}
+
+// 使用 typeof Greeter，意思是取Greeter类的类型,而不是实例的类型
+let greeterMaker: typeof Greeter = Greeter;
