@@ -1,17 +1,17 @@
 // boolean
-var isDone = false;
+let isDone = false;
 // number
-var hexLiteral = 0xf00d;
-var octalLiteral = 484;
+let hexLiteral = 0xf00d;
+let octalLiteral = 0o744;
 // 字符串
-var test = 'bob';
+let test = 'bob';
 // 泛型数组 Array<元素类型>
-var list = [1, 2, 3];
+let list = [1, 2, 3];
 // 元组
 // 元组类型表示一个已知元素数量和类型的数组，各元素的类型不必相同
 // note: please be careful of known numbers and types
 // declare a typle type
-var x;
+let x;
 x = ['hello', 10];
 // x = [10,'hello'];
 console.log(x[0].substr(1));
@@ -27,21 +27,21 @@ var Color;
     Color[Color["Blue"] = 3] = "Blue";
 })(Color || (Color = {}));
 ;
-var c = Color.Green;
+let c = Color.Green;
 // 这里的d为什么可以设置为任意类型呢？
-var d = Color['0'];
+let d = Color['0'];
 // 不加any自动类型推导为Number类型
-var notSure = 4;
+let notSure = 4;
 // void
 function warnUser() {
     console.log('This is my warning message!');
 }
-var unusable = undefined;
+let unusable = undefined;
 // note: 默认情况下null和undefined是所有类型的子类型。
 //  就是说你可以把 null和undefined赋值给number类型的变量。
 // 加上 --strictNullChecks ，下面代码会报错
 // 此时 null与undefined只能赋值给自身和void类型
-var u = null;
+let u = null;
 // Never
 // 表示不存在的值的类型
 // 是那些总是会抛出异常或根本就不会有返回值的函数表达式或
@@ -57,7 +57,8 @@ create({ prop: 0 });
 create(null);
 // create(42); // error
 // 类型断言
-var someValue = 'this is someValue';
+let someValue = 'this is someValue';
 // note: 这里的.号优先级高于<string>
-var strLength = someValue.length;
+let strLength = someValue.length;
+// note: 第二种形式，通过as string 表示<string>
 strLength = someValue.length;
